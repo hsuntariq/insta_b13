@@ -44,6 +44,24 @@
             <input type="text" name="username" placeholder="UserName" class="form-control my-2">
             <input type="password" name="password" placeholder="Password" class="form-control my-2">
             <input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control my-2">
+
+            <?php 
+                if(isset($_SESSION['unmatched_password'])){
+            ?>
+
+            <p class="text-danger fw-bold m-0 p-0 invalid_pass">
+                <?php echo $_SESSION['unmatched_password']  ?>
+            </p>
+
+            <?php 
+                }
+                unset($_SESSION['unmatched_password'])
+                    ?>
+
+
+
+
+
             <p class="text-sm text-center">
                 People who use our service may have uploaded your contact information to Instagram. Learn More
             </p>
@@ -61,6 +79,23 @@
                 in</a>
         </p>
     </div>
+
+
+
+    <script>
+    let invalid = document.querySelector('.invalid_pass');
+    setTimeout(() => {
+        invalid.style.transition = 'all 0.9s'
+        invalid.style.transform = 'translateY(-20px)'
+        invalid.style.opacity = '0'
+        setTimeout(() => {
+            invalid.style.display = 'none'
+        }, 1000);
+
+    }, 3000)
+    </script>
+
+
 </body>
 
 </html>

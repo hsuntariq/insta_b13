@@ -50,17 +50,35 @@
 
             </div>
             <div class="col-lg-6">
-                <form action="" method="POST" class="border p-5">
+                <form action="./log-user.php" method="POST" class="border p-5">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png?20160616034027"
                         width="100%" class="d-block mx-auto" alt="">
-                    <input type="text" placeholder="Phone number, username, or email" class="form-control my-2">
-                    <input type="text" placeholder="Password" class="form-control my-2">
+                    <input name="email" type="text" placeholder="Phone number, username, or email"
+                        class="form-control my-2">
+                    <input name="password" type="text" placeholder="Password" class="form-control my-2">
                     <button class="btn btn-info w-100 my-2">Login</button>
                     <div class="d-flex align-items-center gap-4 justify-content-center">
                         <hr class="w-25">
                         <h6 class="m-0 p-0">OR</h6>
                         <hr class="w-25">
                     </div>
+
+                    <?php 
+                        if(isset($_SESSION['invalid_user'])){
+                    ?>
+
+                    <p class="text-danger fw-bold text-center">
+                        <?php echo $_SESSION['invalid_user'] ?>
+                    </p>
+
+                    <?php 
+                        }
+
+                        unset($_SESSION['invalid_user']);
+
+                        ?>
+
+
                 </form>
 
                 <div class="border my-4 p-4 text-center ">
