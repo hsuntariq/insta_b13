@@ -10,12 +10,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body fs-6">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="./add-post-data.php" method="post" enctype="multipart/form-data">
                     <label for="">Caption</label>
                     <input type="text" name="caption" class="form-control">
 
                     <label for="">Post</label>
-                    <input type="file" name="content" class="form-control">
+                    <input type="file" name="content" class="form-control image-input">
+                    <img src="" style="object-fit: contain;" width="200px" height="200px"
+                        class="preview-image my-3 mx-auto border" alt="">
+                    <video src="" controls style="object-fit: contain;" width="200px" height="200px"
+                        class="preview-video my-3 mx-auto border"></video>
                     <button class="btn btn-success w-100 my-2">
                         Add Post
                     </button>
@@ -24,4 +28,7 @@
 
         </div>
     </div>
+
+
+
 </div>
