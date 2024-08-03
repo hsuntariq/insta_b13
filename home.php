@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include  './boot_css.php' ?>
     <title>Document</title>
+    <style>
+    body {
+        overflow: hidden;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0;
+    }
+    </style>
 </head>
 
 <body>
@@ -18,12 +27,12 @@
         }
      ?>
 
-
     <div class="row">
         <div class="col-xl-2 col-lg-3">
             <?php include './sidebar.php' ?>
         </div>
         <div class="col-xl-7 col-lg-6" style="height: 99.5vh;overflow-y:scroll">
+
             <?php include './posts.php' ?>
 
         </div>
@@ -52,6 +61,9 @@
     <?php 
             include './boot_js.php'
         ?>
+
+
+
 
 
     <script>
